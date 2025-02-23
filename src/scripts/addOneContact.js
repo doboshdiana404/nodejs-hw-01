@@ -5,12 +5,9 @@ import { writeContacts } from '../utils/writeContacts.js';
 export const addOneContact = async () => {
   const newContact = createFakeContact();
   const prevContacts = await readContacts();
-  readContacts()
-    .then((elem) => {
-      prevContacts.push(newContact);
-      writeContacts(prevContacts);
-    })
-    .catch((error) => console.log(error));
+
+  prevContacts.push(newContact);
+  await writeContacts(prevContacts);
 };
 
 addOneContact();

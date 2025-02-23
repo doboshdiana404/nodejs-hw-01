@@ -10,7 +10,6 @@ const generateContacts = async (number) => {
   }
   const updatedContacts = [...prevContacts, ...newContact];
   writeContacts(updatedContacts);
-  console.log(updatedContacts);
 };
 
 generateContacts(5);
